@@ -112,7 +112,7 @@ input {
 .input{
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.08) url('/img/icons/search.svg') no-repeat;
+  background: rgba(255, 255, 255, 0.08) url('../img/icons/search.svg') no-repeat;
   background-position: top 50% right 1.5rem;
   background-size: 2rem;
   border-radius: 0.8rem;
