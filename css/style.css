@@ -621,6 +621,10 @@ input {
   display: none;
 }
 
+.modal__inner{
+  scale: 2;
+}
+
 
 .active{
   display: flex;
