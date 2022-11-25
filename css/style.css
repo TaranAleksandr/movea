@@ -52,6 +52,7 @@ input {
 
 .header {
   grid-area: my-header;
+  box-shadow: 0 .4rem 1rem rgba(255, 255, 255, 0.07);
 }
 
 .aside{
@@ -69,7 +70,7 @@ input {
   "my-aside my-main my-main"
   "my-aside my-main my-main";
   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-  gap: 8rem 0;
+  gap: 3rem 0;
 }
 
 .grid-init{
@@ -153,6 +154,10 @@ input {
   width: 6rem;
   height: 6rem;
   border-radius: 50%
+}
+
+.main-display{
+  padding-top: 5rem;
 }
 
 .main-display__trailer{
@@ -316,6 +321,7 @@ input {
   line-height: 1.17;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 1.6rem;
+  z-index: 1;
 }
 
 .button-play__wrap.small{
@@ -373,6 +379,10 @@ input {
   height: 1rem;
 }
 
+.popular__footer, .tranding__footer{
+  z-index: 1;
+}
+
 .button-play__wrap.small-plus{
   background: rgba(255, 255, 255, 0.3);
   width: 2rem;
@@ -391,7 +401,29 @@ input {
 }
 
 .aside{
-  padding-right: 5.9rem;
+  position: relative;
+  margin-right: 3.9rem;
+  padding-top: 5rem;
+  border-right: 1px solid #1C1B1F
+}
+
+.aside::after{
+  position: absolute;
+  top: 13rem;
+  right: -1rem;
+  content: url('../img/icons/black_play.svg');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.2rem;
+  height: 2.6rem;
+  background: #FCFCFE;
+  border-radius: 20px;
+}
+
+.aside__wrap{
+  background-color: rgba(255, 255, 255, 0.02);
+  
 }
 
 .aside__title{
@@ -483,10 +515,17 @@ input {
   line-height: 1.17;
 }
 
+.aside__top{
+  padding-right: 2.3rem;
+  padding-left: 2.4rem;
+  padding-bottom: 4rem;
+  background: #17161B;
+}
+
 .aside__bottom{
-  margin-top: 3rem;
-  padding: 2.5rem 0;
-  background-color:rgba(255, 255, 255, 0.02);
+  /* margin-top: 3rem; */
+  padding: 2.5rem 0 2rem 2.4rem;
+  /* background-color:rgba(255, 255, 255, 0.02); */
 }
 
 .aside__favorite-text{
@@ -515,7 +554,21 @@ input {
   margin-bottom: 6rem;
 }
 
+.aside__add::before{
+  content: '';
+  display: block;
+  width: 6.5rem;
+  height: 0.1rem;
+  position: absolute;
+  top: -200%;
+  left: 0;
+  transform: translate(0, -20%);
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor:default;
+}
+
 .aside__add{
+  position: relative;
   display: flex;
   margin-bottom: 2rem;
   font-size: 1.4rem;
@@ -549,4 +602,26 @@ input {
 
 .gray{
   background-color: #2B2A2F;
+}
+
+.modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, .5);
+  padding: 3rem 0;
+  z-index: 2;
+  display: none;
+}
+
+
+.active{
+  display: flex;
 }
